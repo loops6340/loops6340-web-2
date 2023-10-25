@@ -18,7 +18,7 @@ export default async function Date(props: any) {
 
   return (
     <>
-      <div className="w-[854px] flex flex-col gap-[0.65rem]">
+      <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
         <div className="">
           {/* <ConchaMeiggsTraductor /> */}
           {
@@ -81,7 +81,7 @@ export default async function Date(props: any) {
               </Link>
 
               <div className="flex flex-col">
-                        <Link href={`/project/${1}`} className="flex flex-col">
+                        <Link href={`/project/${project.id}`} className="flex flex-col">
                         <h2 className="text-black font-medium text-[13px] group-hover:text-[#167ac6] bold">
                         {project.title}
                           </h2>

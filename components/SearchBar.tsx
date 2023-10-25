@@ -31,7 +31,7 @@ const SearchBar = () => {
     return (
         <>
             <form action={""} className="flex">
-                <input type="text" className="h-[100%] w-[584px]" readOnly value={""} />
+                <input type="text" className="h-[100%] w-[100%] lg:w-[584px]" readOnly value={""} />
                 <Button onClick={(e) => {
                 
                 }}

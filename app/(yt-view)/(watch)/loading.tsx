@@ -5,7 +5,7 @@ function loading() {
   
     <>
     
-    <div className="w-[854px] flex flex-col gap-[0.65rem]">
+    <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
         <div className="h-[480px]">
           
         </div>

@@ -12,7 +12,7 @@ const layout: React.FC<{ children: React.ReactNode; params: any }> = ({
 
   return (
     <>
-      <main className="flex min-h-screen gap-[0.65rem] ml-9 mr-9 pt-[3.8rem]">
+      <main className="flex flex-col min-h-screen gap-[0.65rem] ml-9 mr-9 pt-[3.8rem] lg:flex-row">
         {children}
       </main>
       <footer className="mt-[100px]">
