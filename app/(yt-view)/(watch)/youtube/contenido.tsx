@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import ytsr from "ytsr"
 import SeccionRecomendados from "./recomendados"
 import dynamic from "next/dynamic"
+import Head from "next/head"
 
 async function search(search: string) {
     console.log("TARDO", search)
@@ -41,6 +42,9 @@ export async function Contenido({props}:any) {
     return (
 
         <>
+        {/* <Head>
+            <title>{}</title>
+        </Head> */}
         <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
        
             <div className="" >
