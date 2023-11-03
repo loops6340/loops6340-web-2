@@ -46,6 +46,11 @@ export async function generateMetadata({searchParams}: Props): Promise<Metadata>
 
     return {
         title: videos[0].title,
+        alternates: {
+            types: {
+                "application/json+oembed": `https://www.youtube.com/oembed?format=json&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${videos[0].id}`
+            }
+        },
         openGraph: {
             url: `https://youtube.com/watch?v=${videos[0].id}`,
             // title: videos[0].title,
