@@ -11,23 +11,40 @@ async function search(search: string) {
     const f = searchResult.get("Type")?.get("Video")
     const a = await ytsr(f!.url!, {pages:1})
     console.log(f!.url)
-    return a.items[0] as ytsr.Video
+    return a.items as ytsr.Video[]
 }
 export default async function Date(props: any) {
   
+  let video: ytsr.Video;
+  let recomendados: ytsr.Video[]
+  if (!props.searchParams.v)  {
+    const querySearchResult = await search(decodeURIComponent(props.searchParams.search_query))
+    video = querySearchResult[0]
+    recomendados = querySearchResult
+  } else {
+    const idSearchResult = await search(decodeURIComponent(props.searchParams.v))
+    video = idSearchResult[0]
+    recomendados =  await search(decodeURIComponent(video.title))
+  }
 
-  const video = await search(decodeURIComponent(props.params.id))
+//   const videos = !props.searchParams.v 
+//     ? await search(decodeURIComponent(props.searchParams.search_query))
+//     : await search(decodeURIComponent(props.searchParams.v))
 
   return (
     <>
       <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
-        <div className="">
+        <div className="" >
           {/* <ConchaMeiggsTraductor /> */}
+
+
           <iframe
-            src={`https://www.youtube.com/embed/${video.id}`}
+            src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=0`}
             width="100%"
-            height={480}
+            height={510}
             name="myIFrame"
+            allowFullScreen
+            allow="autoplay; encrypted-media"
           ></iframe>
 
           {/* <Button disabled={true}>
@@ -54,7 +71,7 @@ export default async function Date(props: any) {
         </div>
         <div className="bg-white pt-[0.65rem] pl-[0.90rem] pr-[0.90rem] pb-[0.65rem]">
           <span className="text-[16px] text-[#222] font-normal">
-            Publicado el {video.uploadedAt}
+            {video.uploadedAt}
             
           </span>
           <p>{video.description}</p>
@@ -62,15 +79,15 @@ export default async function Date(props: any) {
       </div>
       <div className="flex-1 flex flex-col bg-white">
         <div className="bg-white p-4 flex flex-col gap-2">
-          {youtubeData.map((project, i) => (
+          {recomendados.map((project, i) => (
             <div key={i} className="flex gap-2 w-[100%] group">
            
           
-              <Link className="relative h-[68px]" href={`/video/${project.id}`}>
+              <Link className="relative h-[68px]" href={`/youtube?v=${project.id}`}>
                 <div className="z-20">
                   <img
                     className="ai hover:z-[2] z-20"
-                    src={project.thumbnail}
+                    src={project.bestThumbnail?.url || ""}
                     width={120}
                     height={68}
                     alt=""
@@ -78,18 +95,18 @@ export default async function Date(props: any) {
                   />
                 </div>
                 <span className="opacity-75 text-[11px] absolute z-1 bottom-[1px] h-[14px] leading-[14px] font-medium right-[1px] inline-block aling-top m-0 bg-black text-white p-[0_4px]">
-                  3:09
+                  {project.duration}
                 </span>
               </Link>
 
               <div className="flex flex-col">
-                <Link href={`/video/${project.id}`} className="flex flex-col">
+                <Link href={`/youtube?v=${project.id}`} className="flex flex-col">
                   <h2 className="text-black font-medium text-[13px] group-hover:text-[#167ac6] bold">
                     {project.title}
                   </h2>
-                  <div className="text-[11px] text-[#767676]">De loops</div>
+                  <div className="text-[11px] text-[#767676]">De {project.author?.name}</div>
                   <div className="text-[11px] text-[#767676]">
-                    Hecho el {project.date}
+                    {project.uploadedAt}
                   </div>
                 </Link>
               </div>
