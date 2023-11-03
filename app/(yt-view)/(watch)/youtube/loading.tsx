@@ -1,13 +1,15 @@
 import React from 'react'
 
-function loading() {
+function loading(props: any) {
+  // console.log(props)
   return (
   
     <>
     
     <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
         <div className="h-[480px]">
-          
+        <div className="" >
+            </div>
         </div>
 
         <div className="bg-white pt-[0.65rem] pl-[0.90rem] pr-[0.90rem]">
