@@ -89,7 +89,7 @@ export default async function Date(props: any) {
 
                    <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
        
-            <div className="" >
+            {/* <div className="" >
                 
                     <iframe
                         src={`https://www.youtube.com/embed/${props.params.id}?autoplay=1&mute=0`}
@@ -100,9 +100,9 @@ export default async function Date(props: any) {
                         allow="autoplay; encrypted-media"
                     ></iframe>
                 
-            </div>
+            </div> */}
             {/* <Suspense> */}
-            {/* <DynamicContenido props={props}/> */}
+            <DynamicContenido props={props}/>
 
             {/* </Suspense> */}
 

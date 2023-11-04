@@ -75,7 +75,7 @@ export async function Contenido({props, params}:any) {
 
         </div>
         <div className="flex-1 flex flex-col bg-white">
-            <DynamicRecomendados recomendados={recomendados} tituloVideoRaiz={videos[0].title} />
+            <DynamicRecomendados recomendados={recomendados} tituloVideoRaiz={decodeURIComponent(props.params.search)} />
         </div>
         </>
     )
