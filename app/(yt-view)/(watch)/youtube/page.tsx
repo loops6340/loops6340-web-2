@@ -22,11 +22,11 @@ type Props = {
     searchParams: { [key: string]: string | undefined }
   }
    
-export const metadata = {
-    other: {
-        "theme-color": "#43B581"
-    }
-}
+// export const metadata = {
+//     other: {
+//         "theme-color": "#43B581"
+//     }
+// }
 export async function generateMetadata({searchParams}: Props): Promise<Metadata> {
 
     // const idSearchResult = await search(`https://youtube.com/watch?v=${decodeURIComponent(searchParams!.v!)}`)
@@ -49,6 +49,9 @@ export async function generateMetadata({searchParams}: Props): Promise<Metadata>
     }
 
     return {
+            other: {
+        "theme-color": "#43B581"
+    },
         title: videos[0].title,
         alternates: {
             types: {
