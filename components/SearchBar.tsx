@@ -42,7 +42,7 @@ const SearchBar = () => {
                
                 // const response = await fetch(`/api/youtube/${busqueda}`)
                 // const json = await response.json()
-                router.push(`/youtube?search_query=${encodeURIComponent(busqueda)}`)
+                router.push(`/youtube/query/${encodeURIComponent(busqueda)}`)
                 // router.
             }} className="flex">
                 <input 

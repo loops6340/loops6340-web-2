@@ -7,7 +7,7 @@ function loading(props: any) {
     <>
     
     <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
-        <div className="h-[480px]">
+        <div className="h-[510px]">
         <div className="" >
             </div>
         </div>
