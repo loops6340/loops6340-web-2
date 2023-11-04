@@ -27,7 +27,7 @@ const SeccionRecomendados = async (props: any) => {
     {recomendados.map((project, i) => (
       <div key={i} className="flex gap-2 w-[100%] group">
      
-    
+{/*     
         <Link className="relative h-[68px]" href={`/youtube/id/${project.id}`} >
           <div className="z-20">
             <img
@@ -42,7 +42,7 @@ const SeccionRecomendados = async (props: any) => {
           <span className="opacity-75 text-[11px] absolute z-1 bottom-[1px] h-[14px] leading-[14px] font-medium right-[1px] inline-block aling-top m-0 bg-black text-white p-[0_4px]">
             {project.duration}
           </span>
-        </Link>
+        </Link> */}
 
         <div className="flex flex-col">
           <Link href={`/youtube/id/${project.id}`} className="flex flex-col">
