@@ -10,11 +10,14 @@ import dynamic from "next/dynamic";
 
 async function search(search: string) {
     console.log("TARDO", search)
+    console.time()
     const searchResult = await ytsr.getFilters(search)
+    console.log(searchResult)
     console.log("YANO")
     const f = searchResult.get("Type")?.get("Video")
     const a = await ytsr(f!.url!, { pages: 1 })
     console.log(f!.url)
+    console.timeEnd()
     return a.items as ytsr.Video[]
 }
 type Props = {
@@ -89,7 +92,7 @@ export default async function Date(props: any) {
 
                    <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
        
-            {/* <div className="" >
+            <div className="" >
                 
                     <iframe
                         src={`https://www.youtube.com/embed/${props.params.id}?autoplay=1&mute=0`}
@@ -100,7 +103,7 @@ export default async function Date(props: any) {
                         allow="autoplay; encrypted-media"
                     ></iframe>
                 
-            </div> */}
+            </div>
             {/* <Suspense> */}
             <DynamicContenido props={props}/>
 

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import ytsr from "ytsr"
 
@@ -27,14 +28,18 @@ const SeccionRecomendados = async (props: any) => {
     {recomendados.map((project, i) => (
       <div key={i} className="flex gap-2 w-[100%] group">
      
-{/*     
+    
         <Link className="relative h-[68px]" href={`/youtube/id/${project.id}`} >
           <div className="z-20">
-            <img
+            <Image
               className="ai hover:z-[2] z-20"
-              src={project.bestThumbnail?.url || ""}
+              src={`https://i.ytimg.com/vi/${project.id}/hq1.jpg`}
               width={120}
               height={68}
+              objectFit="cover"
+              quality={100}
+            
+              priority={false}
               alt=""
               style={{ height: 68, minWidth: 120, objectFit: "cover" }}
             />
@@ -42,7 +47,7 @@ const SeccionRecomendados = async (props: any) => {
           <span className="opacity-75 text-[11px] absolute z-1 bottom-[1px] h-[14px] leading-[14px] font-medium right-[1px] inline-block aling-top m-0 bg-black text-white p-[0_4px]">
             {project.duration}
           </span>
-        </Link> */}
+        </Link>
 
         <div className="flex flex-col">
           <Link href={`/youtube/id/${project.id}`} className="flex flex-col">
