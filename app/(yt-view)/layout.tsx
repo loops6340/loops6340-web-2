@@ -15,7 +15,7 @@ const roboto = Roboto({ weight: ["400", "500"], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'REFGVKESRGVMVEKRFELÑ',
-  description: 'KOPGFVWEA`PGLHW`3A5LRGT`P',
+  // description: 'KOPGFVWEA`PGLHW`3A5LRGT`P',
 }
 
 export default function RootLayout({
