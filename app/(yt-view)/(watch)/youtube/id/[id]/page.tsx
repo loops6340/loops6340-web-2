@@ -2,7 +2,7 @@ import { youtubeData } from "@/app/watch-data";
 import VideoThumbnail from "@/components/VideoThumbnail";
 import Link from "next/link";
 import { NextResponse } from "next/server";
-import ytsr from 'ytsr'
+import ytsr from "ytsr";
 import SeccionRecomendados from "./recomendados";
 import { Suspense } from "react";
 import { Metadata } from "next";
@@ -31,7 +31,7 @@ import Contenido from "./contenido";
 
 //   // export const metadata = {
 //     const DynamicContenido = dynamic(() => import('./contenido'), {
-    
+
 //     loading: () => <div>LOADING</div>
 //     })
 //     other: {
@@ -42,16 +42,14 @@ import Contenido from "./contenido";
 
 //     // const idSearchResult = await search(`https://youtube.com/watch?v=${decodeURIComponent(searchParams!.v!)}`)
 
-
-    
 //     let videos: ytsr.Video[] = [];
 
 //     if (params.id) {
-     
+
 //             const querySearchResult = await search(decodeURIComponent(params.id))
 //             // console.log(querySearchResult)
 //             videos = querySearchResult
-        
+
 //     } else {
 //         // const idSearchResult = await search(`https://youtube.com/watch?v=${decodeURIComponent(searchParams.v)}`)
 //         // // console.log(idSearchResult)
@@ -81,46 +79,47 @@ import Contenido from "./contenido";
 
 //             },
 //             type: "video.other",
-            
+
 //         },
 //     }
 // }
 export default async function Date(props: any) {
-
-    return (
-        <>
-        
-
-                   <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
-       
-            <div className="" >
-                
-                    <iframe
-                        src={`https://www.youtube.com/embed/${props.params.id}?autoplay=1&mute=0`}
-                        width="100%"
-                        height={510}
-                        name="myIFrame"
-                        allowFullScreen
-                        allow="autoplay; encrypted-media"
-                    ></iframe>
-                
-            </div>
-            <Suspense fallback={<div>LOADING</div>
-}>
-                <Contenido props={props}/>
-
-            </Suspense>
-
+  return (
+    <>
+      <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
+        <div>
+          <iframe
+            className="aspect-video"
+            src={`https://www.youtube.com/embed/${props.params.id}?autoplay=1&mute=0`}
+            width="100%"
+            // height={510}
+            name="myIFrame"
+            allowFullScreen
+            allow="autoplay; encrypted-media"
+          ></iframe>
         </div>
-           <div className="flex-1 flex flex-col bg-white">
-            <Suspense fallback={<div>LOADING</div>
-}>
-                <Recomendados {...props} />
-
-            </Suspense>
-
-           </div>
-
-        </>
-    )
+        <Suspense
+          fallback={
+            <div 
+              className="bg-white pt-[0.65rem] pl-[0.90rem] pr-[0.90rem] pb-[0.65rem] flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)]">
+              ...
+            </div>
+          }
+        >
+          <Contenido props={props} />
+        </Suspense>
+      </div>
+      <div className="flex-1 flex flex-col bg-white">
+        <Suspense
+          fallback={
+            <div className="bg-white p-4 flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)] ">
+              ...
+            </div>
+          }
+        >
+          <Recomendados {...props} />
+        </Suspense>
+      </div>
+    </>
+  );
 }

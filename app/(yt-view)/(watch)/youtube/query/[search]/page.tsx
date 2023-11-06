@@ -79,6 +79,28 @@ export default async function Date(props: any) {
     return (
         <>
             <Suspense
+                fallback={
+                    <>
+                    <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
+                      <div className="h-[510px]">
+                        
+                      </div>
+                      
+                    <div 
+                        className="bg-white pt-[0.65rem] pl-[0.90rem] pr-[0.90rem] pb-[0.65rem] flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)]">
+                            ...
+                          </div>
+                    
+                    </div>
+                    <div className="flex-1 flex flex-col bg-white">
+                     
+                          {/* <div className="bg-white p-4 flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)] ">
+                            ...
+                          </div> */}
+                      
+                    </div>
+                  </>
+                }
               >
                  <Contenido props={props} />
             </Suspense>

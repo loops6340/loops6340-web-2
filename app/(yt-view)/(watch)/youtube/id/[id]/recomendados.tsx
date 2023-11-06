@@ -14,18 +14,16 @@ async function search(search: string) {
 
 const SeccionRecomendados = async (props: any) => {
 
-    // console.log(props.recomendados.length)
     let recomendados: ytsr.Video[] = [];
 
-   
-        const videos =  await search(`https://youtube.com/watch?v=${decodeURIComponent(props.params.id)}`)
-        recomendados = await search(decodeURIComponent(videos[0].title))
+    const videos =  await search(`https://youtube.com/watch?v=${decodeURIComponent(props.params.id)}`)
+    recomendados = await search(decodeURIComponent(videos[0].title))
    
 
     return (
-    <div className="bg-white p-4 flex flex-col gap-2">
+    <div className="bg-white p-4 flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)] ">
     
-    {recomendados.map((project, i) => (
+    {recomendados.filter(project => project.title !== "Shorts").map((project, i) => (
       <div key={i} className="flex gap-2 w-[100%] group">
      
     
@@ -33,7 +31,7 @@ const SeccionRecomendados = async (props: any) => {
           <div className="z-20">
             <Image
               className="ai hover:z-[2] z-20"
-              src={`https://i.ytimg.com/vi/${project.id}/hq1.jpg`}
+              src={project.bestThumbnail.url || ""}
               width={120}
               height={68}
               objectFit="cover"
@@ -61,14 +59,6 @@ const SeccionRecomendados = async (props: any) => {
           </Link>
         </div>
       </div>
-      // <div key={i} className="flex gap-2 h-[100px] w-[100%]">
-      //     {/* <Link href={`/watch/${project.id}`} className="w-[120px]"> */}
-      //         <img src={project.thumbnail} width={120} alt="" />
-      //     {/* </Link> */}
-      //     <h2 className="text-[13px] break-words break-all">
-      //         {project.title}
-      //     </h2>
-      // </div>
     ))}
   </div>
     )

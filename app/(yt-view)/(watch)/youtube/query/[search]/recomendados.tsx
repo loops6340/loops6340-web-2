@@ -21,11 +21,10 @@ const SeccionRecomendados = async (props: any) => {
     } else {
         recomendados = await search(decodeURIComponent(props.tituloVideoRaiz))
     }
-
     return (
-    <div className="bg-white p-4 flex flex-col gap-2">
+    <div className="bg-white p-4 flex flex-col gap-2 shadow-[0_1px_2px_rgba(0,0,0,.1)] ">
     
-    {recomendados.map((project, i) => (
+    {recomendados.filter(project => project.title !== "Shorts").map((project, i) => (
       <div key={i} className="flex gap-2 w-[100%] group">
      
     
