@@ -28,7 +28,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           <SideVideo
             key={i}
             title={props.titulo}
-            href={`/video/${URL.parse(props.url)?.searchParams.get("v")}`}
+            href={`/video/${new URL(props.url)?.searchParams.get("v")}`}
             thumbnail={props.thumbnail}
             author={props.channel.name}
             date={""}
