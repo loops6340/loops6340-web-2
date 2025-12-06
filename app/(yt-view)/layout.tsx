@@ -1,6 +1,6 @@
 import Button from '@/components/Button'
 //  import "xp.css/dist/XP.css"
-
+import SideVideo from '@/components/YoutubeUI/SideVideo'
 import '@/app/globals.css'
 
 import type { Metadata } from 'next'
@@ -10,6 +10,9 @@ import SecondaryButton from '@/components/SecondaryButton'
 import { redirect } from 'next/dist/server/api-utils'
 import SearchBar from '@/components/SearchBar'
 import Link from 'next/link'
+import SideVideosSection from '@/components/YoutubeUI/SideVideosSection'
+import { projectData } from '../watch-data'
+import Data from '../base-falsa'
 
 const roboto = Roboto({ weight: ["300", "400", "500"], subsets: ['latin'] })
 
@@ -35,7 +38,7 @@ export default function RootLayout({
 
           </div>
           <SearchBar />
-          <div className="ml-auto mt-0 flex gap-4 mb-[0.05rem] hidden lg:flex">
+          <div className="ml-auto mt-0 flex gap-4 mb-[0.05rem] lg:flex">
             <Button>
               Concha
             </Button>
@@ -43,6 +46,7 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+
       </body>
     </html>
   )

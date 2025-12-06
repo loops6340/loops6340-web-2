@@ -18,7 +18,7 @@ export default function Home() {
                     href={`/project/${309}`}
                     width={402}
                     height={226}
-                    src="https://cdn.discordapp.com/attachments/1109353592009265253/1119407727316312134/dfd61eada7370d64e4e5c96c54df2cf1.png?ex=654581af&is=65330caf&hm=85742db034bca0138ad8727615498e36c87430f871cc1acda9922195e226ba85&"
+                    src="ttps://i.ytimg.com/vi/0xtMiE5GCQI/maxresdefault.jpg"
                   />
 
                   <div className="flex flex-col">

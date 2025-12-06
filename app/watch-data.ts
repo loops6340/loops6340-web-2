@@ -9,7 +9,7 @@ export const projectData = [
       gitHubLink: 'https://github.com/olawanlejoel/Todo-List-App',
       type: "iframe",
       content: "https://alfondohaysitio.netlify.app/",
-      thumbnail: "https://cdn.discordapp.com/attachments/1139315378728730774/1165700044691882224/image.png?ex=6547cdc4&is=653558c4&hm=d5faeffdcb6ddc59d9b1fa0383167c095859bbd8bf43f69416fded7fcc4cc1fa&"
+      thumbnail: "https://i.imgur.com/ljUEnnN.png"
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export const projectData = [
         'Si mal no recuerdo intenté hacerme un sitio en 2021, obviamente no tenía idea de que iba a poner XD, seiva server es el server de unos amigos de esas épocas, hice traductor concha meiggs pero con otras letras (el copiar a portapapeles no funciona)',
       date: "12/11/2021",
       content: 'https://loops6340-web.vercel.app/',
-      thumbnail: "https://cdn.discordapp.com/attachments/1139315378728730774/1165699347145556079/image.png?ex=6547cd1e&is=6535581e&hm=41f786ba898969e2e956b904c28568394cdb8f80e3c52ec5c9244d05d98f7018&"
+      thumbnail: "https://i.imgur.com/BFmz2DV.png"
 
     },
     {

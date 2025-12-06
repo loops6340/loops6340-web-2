@@ -1,13 +1,15 @@
 import React from 'react'
 
-function loading() {
+function loading(props: any) {
+  // console.log(props)
   return (
   
     <>
     
     <div className="lg:w-[854px] flex flex-col gap-[0.65rem]">
-        <div className="h-[480px]">
-          
+        <div className="h-[510px]">
+        <div className="" >
+            </div>
         </div>
 
         <div className="bg-white pt-[0.65rem] pl-[0.90rem] pr-[0.90rem]">
@@ -29,11 +31,11 @@ function loading() {
           <p>.</p>
         </div>
       </div>
-      {/* <div className="flex-1 flex flex-col bg-white">
+      <div className="flex-1 flex flex-col bg-white">
         <div className="bg-white p-4 flex flex-col gap-2">
          
         </div>
-      </div> */}
+      </div>
     </>
 
   )

@@ -5,10 +5,10 @@ const nextConfig = {
     //     serverActions: true
     // }
     images: {
-        "domains": ["i.ytimg.com"],
-        protocol: "https", 
-        hostname: "i.ytimg.com",
-        port: "",
+        // "domains": ["i.ytimg.com"],
+        // protocol: "https", 
+        // hostname: "i.ytimg.com",
+        // port: "",
     }
 }
 

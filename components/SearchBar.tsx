@@ -40,15 +40,13 @@ const SearchBar = () => {
                 e.preventDefault()
                 console.log("HOLAAA HUMANOS XD")
                
-                // const response = await fetch(`/api/youtube/${busqueda}`)
-                // const json = await response.json()
-                router.push(`/youtube/query/${encodeURIComponent(busqueda)}`)
+              
+                router.push(`/youtube?title=${encodeURIComponent(busqueda)}`)
                 // router.
             }} className="flex w-[100%] ">
                 <input 
                     type="text" 
                     className="h-[100%] w-[100%] lg:w-[584px] border-r-[1px] lg:border-r-0"
-                    // placeholder="busca" 
                     value={busqueda} 
                     onChange={(e) => {
                         setBusqueda(e.currentTarget.value)
@@ -61,14 +59,7 @@ const SearchBar = () => {
                     <span className="bg-no-repeat bg-[url(https://web.archive.org/web/20150611000903im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vfldzd94_.png)] bg-search w-[14px] h-[14px] block text-center mr-[0.95rem] ml-[0.95rem] opacity-[.6]"></span>
                 </Button>
             </form>
-            {/* <div style={{
-                position: "relative"
-            }}
-                className="ml-3 mr-3"
-            >
 
-
-            </div> */}
         </>
     )
 }
